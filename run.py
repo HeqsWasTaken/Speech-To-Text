@@ -1,5 +1,20 @@
 import speech_recognition as sr
 import pyttsx3
+import os
+
+def control(dizin, dosya_adı):
+    dosya_yolu = os.path.join(dizin, dosya_adı)
+
+    if os.path.isfile(dosya_yolu):
+        print("Gerekli dosyalar mevcut.")
+    else:
+        print("Gerekli dosyası bulunamadı. Dosya oluşturuluyor...\n")
+        with open(dosya_yolu, 'w',encoding="utf-8") as dosya:
+            dosya.write("Tufan Poyraz Kılıç.\n\n")
+
+        print(f"{dosya_adı} dosyası oluşturuldu.")
+
+control(".", "txt.txt")
 
 r = sr.Recognizer()
 
