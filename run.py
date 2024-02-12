@@ -14,7 +14,7 @@ def control(dizin, dosya_adı):
 
         print(f"{dosya_adı} dosyası oluşturuldu.")
 
-control(".", "txt.txt")
+control("Speech-To-Text", "txt.txt")
 
 r = sr.Recognizer()
 
@@ -36,12 +36,12 @@ def record_text():
             print("sonuç istenemedi; {0}".format(e))
 
         except sr.UnknownValueError:
-            print("bilinmeyen hata oluştu.")
+            print("Dinleniyor.")
 
     return
 
 def output_text(text):
-    f = open("txt.txt" , "a" , encoding="utf-8")
+    f = open("Speech-To-Text/txt.txt" , "a" , encoding="utf-8")
     f.write(text)
     f.write("\n")
     f.close()
